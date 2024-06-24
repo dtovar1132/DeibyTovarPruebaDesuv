@@ -1,27 +1,30 @@
-# DeibyTovarDevSu
+# Proyecto Angular 18
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Este proyecto fue creado utilizando Angular 18.
 
-## Development server
+## Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para trabajar con este proyecto, es necesario tener instalado Node.js versión 18 o superior y Angular CLI.
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para instalar las dependencias del proyecto, ejecuta el siguiente comando dentro de la carpeta del proyecto:
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Ejecución del Proyecto
 
-## Running unit tests
+Para correr el proyecto, utiliza el siguiente comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng serve
 
-## Running end-to-end tests
+Esto iniciará la aplicación en http://localhost:4200/.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Ejecución de Pruebas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para ejecutar las pruebas y obtener información de cobertura en la terminal, utiliza el comando:
+
+ng test --code-coverage
+
+Este comando ejecutará las pruebas y generará un informe de cobertura de código.
