@@ -1,0 +1,6 @@
+
+    @if(form && form.controls[key].invalid && form.controls[key].touched){
+        <span class="message">
+            {{form.controls[key].errors | messageValidator}}
+        </span>
+    }

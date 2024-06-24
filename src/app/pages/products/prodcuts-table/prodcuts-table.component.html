@@ -1,0 +1,75 @@
+<div class="table-wrapper">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="table__th table__th--logo">
+          <span class="table__th-text"> logo </span>
+        </th>
+        <th class="table__th">
+          <span class="table__th-text"> Nombre del producto </span>
+        </th>
+        <th class="table__th">
+          <div class="table__th-content">
+            <span class="table__th-text"> Descripción </span>
+            <!--<app-tooltip [text]="'description'" />-->
+          </div>
+        </th>
+        <th class="table__th">
+          <div class="table__th-content">
+            <span class="table__th-text"> Fecha de liberación </span>
+            <!--<app-tooltip [text]="'releaseDate'" />-->
+          </div>
+        </th>
+        <th class="table__th">
+          <div class="table__th-content">
+            <span class="table__th-text"> Fecha de reestructuración </span>
+            <!--<app-tooltip [text]="'restructuringDate'" />-->
+          </div>
+        </th>
+        <th class="table__th table__th--actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of productStroe.productsPage(); track $index) {
+        <tr>
+          <td class="table__td">
+            <div class="table__td-logo-wrapper">
+              <img
+                class="table__td-logo"
+                [src]="product.logo"
+                [alt]="'logo'"
+                onerror="this.src='images/icon-img.svg'"
+              />
+            </div>
+          </td>
+          <td class="table__td">
+            <span class="table__td-text">{{ product.name }}</span>
+          </td>
+          <td class="table__td">
+            <span class="table__td-text">{{ product.description }}</span>
+          </td>
+          <td class="table__td">
+            <span class="table__td-text">{{ product.date_release }}</span>
+          </td>
+          <td class="table__td">
+            <span class="table__td-text">{{ product.date_revision }}</span>
+          </td>
+          <td class="table__td">
+            <span class="table__td-action">
+              <app-menu-actions
+                [product]="product"
+              />
+            </span>
+          </td>
+        </tr>
+      }@empty {
+        <tr>
+          <td class="table__td" colspan="6">
+            No se encontraron productos
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <app-pagination></app-pagination>
+</div>

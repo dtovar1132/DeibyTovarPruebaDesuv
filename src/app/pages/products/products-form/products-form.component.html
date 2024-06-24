@@ -1,0 +1,110 @@
+<div class="form" [formGroup]="form">
+  <h1 class="form__title">Formulario de Registro</h1>
+  <form class="form__content">
+    <div class="form__filed">
+      <div>
+        <label class="form__label">ID</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          formControlName="id"
+          [ngClass]="{
+            'form__input--error':
+              form.get('id')?.invalid && form.get('id')?.touched
+          }"
+        />
+        <app-message-validator [form]="form" key="id"></app-message-validator>
+      </div>
+    </div>
+    <div class="form__filed">
+      <div>
+        <label class="form__label">Nombre</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          formControlName="name"
+          [ngClass]="{
+            'form__input--error':
+              form.get('name')?.invalid && form.get('name')?.touched
+          }"
+        />
+        <app-message-validator [form]="form" key="name"></app-message-validator>
+      </div>
+    </div>
+    <div class="form__filed">
+      <div>
+        <label class="form__label">Descripcion</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          formControlName="description"
+          [ngClass]="{
+            'form__input--error':
+              form.get('description')?.invalid &&
+              form.get('description')?.touched
+          }"
+        />
+        <app-message-validator [form]="form" key="description"></app-message-validator>
+      </div>
+    </div>
+    <div class="form__filed">
+      <div>
+        <label class="form__label">Logo</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          formControlName="logo"
+          [ngClass]="{
+            'form__input--error':
+              form.get('logo')?.invalid && form.get('logo')?.touched
+          }"
+        />
+        <app-message-validator [form]="form" key="logo"></app-message-validator>
+      </div>
+    </div>
+    <div class="form__filed">
+      <div>
+        <label class="form__label">Fecha Liberacion</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          type="date"
+          formControlName="date_release"
+          [min]="nowDate"
+          [ngClass]="{
+            'form__input--error':
+              form.get('date_release')?.invalid &&
+              form.get('date_release')?.touched
+          }"
+        />
+        <app-message-validator [form]="form" key="date_release"></app-message-validator>
+      </div>
+    </div>
+    <div class="form__filed">
+      <div>
+        <label class="form__label">Fecha de Revision</label>
+      </div>
+      <div>
+        <input
+          class="form__input"
+          type="date"
+          formControlName="date_revision"
+        />
+      </div>
+    </div>
+
+    <div class="form__footer">
+      @if(!id){
+        <button class="btn" type="button" (click)="resetForm()">Reiniciar</button>
+      }
+      <button class="btn btn--primary" type="submit" (click)="submit()" [disabled]="form.invalid">
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="pagination">
+    <div class="pagination__results">
+      {{productStroe.productsFilter().length}} Resultados
+    </div>
+
+    <div class="pagination__pages">
+      <span>Pagina </span> <input type="number" min="1" [max]="productStroe.totalPages()" class="pagination_inputpage" [(ngModel)]="page" (ngModelChange)="getPage()">/{{productStroe.totalPages()}}
+    </div>
+
+  
+    <div class="pagination__perpage">
+      <select
+        class="pagination__select"
+        [(ngModel)]="perPage"
+        (ngModelChange)="setPerpage()"
+      >
+        @for (value of paginator; track value) {
+          <option [value]="value">
+            {{ value }}
+          </option>
+        }
+      </select>
+    </div>
+  </div>

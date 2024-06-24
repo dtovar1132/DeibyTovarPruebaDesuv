@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "vars";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  color: $blue;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid rgba($grayDark, 0.1);
+  cursor: pointer;
+
+  &--primary {
+    background-color: $yellow;
+    &[disabled]{
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+  }
+}

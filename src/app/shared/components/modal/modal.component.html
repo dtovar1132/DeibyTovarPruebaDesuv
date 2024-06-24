@@ -1,0 +1,18 @@
+@if(modalService.showModal()){
+  <div class="modal">
+    <div class="modal__content">
+      <div class="modal__text">
+        {{modalService.data().title}}
+      </div>
+      <div class="modal__buttons">
+        <div class="modal__button">
+          <button class="btn" (click)="modalService.closeModal()">Cancelar</button>
+        </div>
+        <div class="modal__button">
+          <button class="btn btn--primary" (click)="modalService.comfirmAction()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+

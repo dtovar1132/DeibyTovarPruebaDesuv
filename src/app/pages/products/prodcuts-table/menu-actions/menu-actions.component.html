@@ -1,0 +1,21 @@
+<div class="action-menu" (click)="toggleActions()">
+    <span class="action-menu__dot"></span>
+    <span class="action-menu__dot"></span>
+    <span class="action-menu__dot"></span>
+  
+    <ul
+      #menuItems
+      class="action-menu__items"
+      
+    >
+      <li class="action-menu__item" (click)="goToEdit()">
+        Editar
+      </li>
+      <li class="action-menu__item" (click)="openModal($event)">
+        Eliminar
+      </li>
+      
+    </ul>
+  </div>
+  
+  

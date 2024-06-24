@@ -1,0 +1,20 @@
+
+@import 'vars';
+
+@import "mixins";
+  
+.main{
+    position: relative;
+    .content{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        background-color: $grayMid;
+        min-height: calc(100vh - 111px);
+        padding: 50px;
+        @include winSize('xsmall'){
+            padding: 50px 10px;
+        }
+    }
+}
